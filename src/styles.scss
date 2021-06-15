@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.container {
+  width: 800px; 
+  margin: 0 auto;
+  height: auto;
+}
+
+$spacer: 1rem !default;
+
+.mt-2 {
+  margin-top: ($spacer * .5) !important;
+}
+
+.mt-5 {
+  margin-top: ($spacer * 1.25) !important;
+}
+
+.mt-20 {
+  margin-top: ($spacer * 5) !important;
+}
+
+.ml-2 {
+  margin-left: ($spacer * .5) !important;
+}
+
+.pl-5 {
+  padding-left: ($spacer * 1.25) !important;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.btn-cancel {
+  background-color: gray;
+  color: #fff;
+} 
+
+.btn-save {
+  background-color: green;
+  color: #fff;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 800px; 
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  .container {
+    width: 600px; 
+  }
+}
