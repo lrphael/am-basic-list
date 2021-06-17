@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeroFormEventService } from './services/hero-form-event.service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,13 @@ export class AppComponent {
   showForm = false;
   searchForm = false;
 
+  constructor(
+    public heroEvents: HeroFormEventService
+  ) { }
+
   newHero(): void {
     this.showForm = true;
+    this.heroEvents.sendFormConfirmation(true);
   }
 
   cancelHeroForm(): void {

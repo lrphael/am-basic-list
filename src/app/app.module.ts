@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +27,7 @@ import { HeroSearchInputComponent } from './components/hero-search-input/hero-se
     HeroListComponent,
     HeroFormComponent,
     HeroCardComponent,
-    HeroSearchInputComponent
+    HeroSearchInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,9 @@ import { HeroSearchInputComponent } from './components/hero-search-input/hero-se
     MatToolbarModule,
     MatIconModule,
 
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

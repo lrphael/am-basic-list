@@ -1,7 +1,4 @@
 {
-  "heroes": [
-    {"id":"1","name": "Spiderman"},
-    {"id":"2","name": "Superman"},
-    {"id":"3","name": "Manolito el fuerte"}
+  "heroes": [    
   ]
 }
