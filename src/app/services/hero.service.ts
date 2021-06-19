@@ -17,7 +17,7 @@ export class HeroService {
     return this.httpClient.get<any>(this.baseUrl);
   }
 
-  get(id: string): Observable<Hero> {
+  getHeroById(id: string): Observable<Hero> {
     return this.httpClient.get<any>(this.baseUrl + '/' + id);
   }
 
