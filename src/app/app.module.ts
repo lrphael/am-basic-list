@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
@@ -22,6 +23,7 @@ import { DefaultFormComponent } from './components/default-form/default-form.com
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { HeroSearchInputComponent } from './components/hero-search-input/hero-search-input.component';
 import { MenuContainerComponent } from './components/menu-container/menu-container.component';
+import { DeletePopupComponent } from './components/delete-popup/delete-popup.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { MenuContainerComponent } from './components/menu-container/menu-contain
     MenuContainerComponent,
     DefaultFormComponent,
     HeroHomeComponent,
+    DeletePopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { MenuContainerComponent } from './components/menu-container/menu-contain
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatDialogModule,
 
     BrowserAnimationsModule,
     ReactiveFormsModule,

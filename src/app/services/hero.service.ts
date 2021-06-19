@@ -29,8 +29,8 @@ export class HeroService {
     return this.httpClient.put<any>(this.baseUrl + '/' + id, hero);
   }
 
-  delete(id: string) {
-    return this.httpClient.delete<any>(this.baseUrl + '/' + id);
+  delete(id: number) {
+    const delSub = this.httpClient.delete<any>(this.baseUrl + '/' + id).subscribe(() => delSub.unsubscribe());
   }
 
 }

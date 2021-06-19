@@ -4,6 +4,9 @@ import { HeroService } from "../../services/hero.service";
 import { Hero } from '../../models/hero';
 import { HeroFormEventService } from 'src/app/services/hero-form-event.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+
+import { DeletePopupComponent } from "../delete-popup/delete-popup.component";
 
 @Component({
   selector: 'hero-list',
@@ -20,7 +23,8 @@ export class HeroListComponent implements OnInit {
   constructor(
     private router: Router,
     private heroService: HeroService,
-    public heroEvents: HeroFormEventService
+    public heroEvents: HeroFormEventService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -39,7 +43,11 @@ export class HeroListComponent implements OnInit {
   }
 
   deleteHero(hero: Hero) {
-    console.log("del hero::: ", hero);
+    const dialogRef = this.dialog.open(DeletePopupComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.heroService.delete(hero.id);
+      }
+    });
   }
-
 }
