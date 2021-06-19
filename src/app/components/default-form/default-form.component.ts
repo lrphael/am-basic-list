@@ -13,7 +13,6 @@ import { HeroFormEventService } from '../../services/hero-form-event.service';
 })
 export class DefaultFormComponent implements OnInit {
 
-  @Input() editForm = false;
   @Input() heroObject: Hero;
 
   allSubscriptions: Array<Subscription> = [];
@@ -23,7 +22,7 @@ export class DefaultFormComponent implements OnInit {
 
   constructor(
     public heroEvents: HeroFormEventService,
-    public formBuilder: FormBuilder,    
+    public formBuilder: FormBuilder,
     private heroService: HeroService
   ) { }
 
@@ -35,8 +34,8 @@ export class DefaultFormComponent implements OnInit {
   }
 
   verifyFormType() {
-    if (this.editForm) {
-      console.log("\n\nFormType EditForm ", this.heroObject);
+    if (this.heroObject) {
+      this.newHeroForm.setValue({ "name": this.heroObject.name });
     }
   }
 
@@ -55,23 +54,36 @@ export class DefaultFormComponent implements OnInit {
   getNewHeroObject() {
     const heroName = this.newHeroForm.get("name").value;
     return {
-      id: this.usersCount,
+      id: this.heroObject ? this.heroObject.id : this.usersCount,
       name: heroName
     }
   }
 
+  generateNewHero(): void {
+    this.getAllUserCounter();
+    this.heroService.create(this.getNewHeroObject()).subscribe(_ => { });
+  }
+
+  updateAHero(): void {
+    this.heroService.update(this.heroObject.id, this.getNewHeroObject()).subscribe(_ => { });
+  }
+
+
   checkFormConfirmation(): void {
     const heroConfirmSubscription = this.heroEvents.confirmForm.subscribe(event => {
       if (event && this.newHeroForm.valid) {
-        this.getAllUserCounter();
-        this.heroService.create(this.getNewHeroObject()).subscribe(_ => { });
+        if (this.heroObject) {
+          this.updateAHero();
+        } else {
+          this.generateNewHero();
+        }
       }
     });
     this.allSubscriptions.push(heroConfirmSubscription);
   }
 
   unsubscribeVariables() {
-    this.allSubscriptions.forEach((sub:Subscription) => {
+    this.allSubscriptions.forEach((sub: Subscription) => {
       sub.unsubscribe();
     })
   }

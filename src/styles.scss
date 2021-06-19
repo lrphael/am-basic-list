@@ -40,6 +40,10 @@ $spacer: 1rem !default;
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .toolbar-spacer {
   flex: 1 1 auto;
 }
@@ -51,6 +55,16 @@ $spacer: 1rem !default;
 
 .btn-save {
   background-color: green;
+  color: #fff;
+}
+
+.btn-edit {
+  background-color: rgb(252, 208, 13);
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: rgb(207, 45, 5);
   color: #fff;
 }
 

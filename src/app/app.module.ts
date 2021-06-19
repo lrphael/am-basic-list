@@ -16,6 +16,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { HeroDetailComponent } from './pages/hero-detail/hero-detail.component';
 import { HeroFormComponent } from './pages/hero-form/hero-form.component';
+import { HeroHomeComponent } from './pages/hero-home/hero-home.component';
 
 import { DefaultFormComponent } from './components/default-form/default-form.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
@@ -33,6 +34,7 @@ import { MenuContainerComponent } from './components/menu-container/menu-contain
     HeroSearchInputComponent,
     MenuContainerComponent,
     DefaultFormComponent,
+    HeroHomeComponent,
   ],
   imports: [
     BrowserModule,

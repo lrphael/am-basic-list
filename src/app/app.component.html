@@ -1,17 +1,5 @@
 
-<div class="container mt-20">
-  <div class="row mt-5">
-    <h1 class="text-center">Heroes</h1>
-  </div>
-
-  <menu-container></menu-container>
-
-  <div class="mt-5 ml-2">
-    <ng-container *ngIf="showForm; else elseTemplate">
-      <hero-form></hero-form>
-    </ng-container>
-    <ng-template #elseTemplate>
-      <hero-list></hero-list>
-    </ng-template>
-  </div>
+  <div class="container mt-20">
+    <menu-container></menu-container>
+    <router-outlet></router-outlet>
 </div>

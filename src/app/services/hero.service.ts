@@ -25,7 +25,7 @@ export class HeroService {
     return this.httpClient.post<any>(this.baseUrl, hero);
   }
 
-  update(id: string, hero: Hero): Observable<Hero> {
+  update(id: number, hero: Hero): Observable<Hero> {
     return this.httpClient.put<any>(this.baseUrl + '/' + id, hero);
   }
 

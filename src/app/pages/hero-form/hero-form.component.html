@@ -1,1 +1,10 @@
-<p>hero-form works!</p>
+<div class="mt-5 ml-2">
+
+  <ng-container *ngIf="!heroData; else editForm">
+    <default-form></default-form>
+  </ng-container>
+  <ng-template #editForm>
+    <default-form [heroObject]="heroData"></default-form>
+  </ng-template>
+
+</div>
