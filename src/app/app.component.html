@@ -3,27 +3,8 @@
   <div class="row mt-5">
     <h1 class="text-center">Heroes</h1>
   </div>
-  <mat-toolbar>
-    <ng-container *ngIf="showForm; else defaultToolbar">
-      <button class="ml-2 btn-cancel" mat-raised-button (click)="cancelHeroForm()">Cancelar</button>
-      <span class="toolbar-spacer"></span>
-      <button class="ml-2 btn-save" mat-raised-button (click)="newHero()">Guardar</button>      
-    </ng-container>
-    <ng-template #defaultToolbar>
-      <ng-container *ngIf="searchForm; else defaultButtons">
-        <hero-search-input></hero-search-input>
-        <button mat-icon-button (click)="cancelSearch()">
-          <mat-icon>close</mat-icon>
-        </button>
-      </ng-container>
-      <ng-template #defaultButtons>
-        <button class="ml-2" mat-raised-button color="primary" (click)="searchHero()">Buscar Heroe</button>
-        <span class="toolbar-spacer"></span>
-        <button class="ml-2" mat-raised-button color="primary" (click)="newHero()">Crear Nuevo Heroe</button>
-      </ng-template>
-      
-    </ng-template>
-  </mat-toolbar>
+
+  <menu-container></menu-container>
 
   <div class="mt-5 ml-2">
     <ng-container *ngIf="showForm; else elseTemplate">
