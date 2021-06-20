@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeroEventService } from 'src/app/services/hero-event.service';
 
 @Component({
   selector: 'hero-search-input',
   templateUrl: './hero-search-input.component.html',
   styleUrls: ['./hero-search-input.component.scss']
 })
-export class HeroSearchInputComponent implements OnInit {
+export class HeroSearchInputComponent {
 
-  constructor() { }
+  constructor(
+    private heroEvent: HeroEventService
+  ) { }
 
-  ngOnInit(): void {
+  searchWord(word) {
+    this.heroEvent.searchHero(word);
   }
 
 }

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
@@ -47,6 +48,7 @@ import { DeletePopupComponent } from './components/delete-popup/delete-popup.com
     MatTableModule,
     MatInputModule,
     MatButtonModule,
+    MatCardModule,
     MatToolbarModule,
     MatIconModule,
     MatDialogModule,

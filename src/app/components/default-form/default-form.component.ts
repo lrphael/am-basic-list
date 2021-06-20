@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Subscription } from 'rxjs';
 import { Hero } from 'src/app/models/hero';
 import { HeroService } from 'src/app/services/hero.service';
-import { HeroFormEventService } from '../../services/hero-form-event.service';
+import { HeroEventService } from '../../services/hero-event.service';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class DefaultFormComponent implements OnInit {
   registerErrors = [];
 
   constructor(
-    public heroEvents: HeroFormEventService,
+    public heroEvent: HeroEventService,
     public formBuilder: FormBuilder,
     private heroService: HeroService
   ) { }
@@ -70,7 +70,7 @@ export class DefaultFormComponent implements OnInit {
 
 
   checkFormConfirmation(): void {
-    const heroConfirmSubscription = this.heroEvents.confirmForm.subscribe(event => {
+    const heroConfirmSubscription = this.heroEvent.confirmForm.subscribe(event => {
       if (event && this.newHeroForm.valid) {
         if (this.heroObject) {
           this.updateAHero();

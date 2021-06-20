@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeroFormEventService } from '../../services/hero-form-event.service';
+import { HeroEventService } from '../../services/hero-event.service';
 
 @Component({
   selector: 'menu-container',
@@ -14,7 +14,7 @@ export class MenuContainerComponent implements OnInit {
 
   constructor(
     private router: Router, 
-    public heroEvents: HeroFormEventService
+    public heroEvent: HeroEventService
   ) { }
 
   ngOnInit(): void {
@@ -23,7 +23,7 @@ export class MenuContainerComponent implements OnInit {
   }
 
   getFormEvent() {
-    this.heroEvents.confirmForm.subscribe(event => {
+    this.heroEvent.confirmForm.subscribe(event => {
       if (event) {
         this.showForm = true;
       }
@@ -39,13 +39,13 @@ export class MenuContainerComponent implements OnInit {
 
   goHeroForm(): void {
     this.showForm = true;
-    this.heroEvents.cleanHeroData()
+    this.heroEvent.cleanHeroData()
     this.router.navigate(["form"]);
   }
 
   saveHeroData(): void {
     this.showForm = true;
-    this.heroEvents.sendFormConfirmation(true);
+    this.heroEvent.sendFormConfirmation(true);
   }
 
   cancelHeroForm(): void {
@@ -60,6 +60,7 @@ export class MenuContainerComponent implements OnInit {
 
   cancelSearch(): void {
     this.searchForm = false;
+    this.heroEvent.searchHero("");
   }
 
 }

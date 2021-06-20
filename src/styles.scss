@@ -68,6 +68,13 @@ $spacer: 1rem !default;
   color: #fff;
 }
 
+.bg-hero-not-found {
+  background-image: url("./assets/images/hero_not_found.png");
+  background-repeat: round;
+  width: 750px;
+  height: 400px;
+}
+
 @media only screen and (min-width: 1200px) {
   .container {
     width: 800px; 

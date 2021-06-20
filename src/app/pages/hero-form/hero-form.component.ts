@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/models/hero';
-import { HeroFormEventService } from 'src/app/services/hero-form-event.service';
+import { HeroEventService } from 'src/app/services/hero-event.service';
 
 @Component({
   selector: 'app-hero-form',
@@ -12,11 +12,11 @@ export class HeroFormComponent implements OnInit {
   heroData: Hero;
 
   constructor(
-    private heroEvents: HeroFormEventService
+    private heroEvent: HeroEventService
   ) { }
 
   ngOnInit(): void {
-    this.heroData = this.heroEvents.getHeroData();
+    this.heroData = this.heroEvent.getHeroData();
   }
 
 }
