@@ -8,7 +8,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Mock server - Second Terminal
 
-Run `npm run server` for a mock dev server. Request to API in `http://localhost:8000/`. 
+1 - You need install `npm install -g json-server`.
+
+2 - Run `npm run server` for a mock dev server. Request to API in `http://localhost:8000/`. 
 
 
 ### Notes
